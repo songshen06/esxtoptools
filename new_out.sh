@@ -10,4 +10,5 @@ cat column | while read LINE
 do gawk -F , -v var="$LINE" '{print $var}' $1 > temp"$LINE".csv
 done
 paste -d, 1.csv temp*.csv > new.csv 
- 
+rm 1.csv
+rm temp*.csv
